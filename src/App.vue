@@ -1,13 +1,32 @@
 <template>
   <div id="app">
-    <nav>
+    <!-- <nav>
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </nav>
-    <router-view/>
+    <router-view/> -->
+    <HomeViewVue></HomeViewVue>
+
   </div>
 </template>
-
+<script>
+import HomeViewVue from './views/HomeView.vue'
+export default {
+  name: "App",
+  components: {
+    // 'a-input-search': Input.Search,
+		// AMenu: Menu,
+    // AMenuItemGroup: Menu.ItemGroup,
+    // AMenuItem: Menu.Item,
+    // ASubMenu: Menu.SubMenu,
+    // AMenuDivider: Menu.Divider,
+    // AButton: Button,
+    // ATooltip: Tooltip,
+    // AModal: Modal,
+    HomeViewVue
+  },
+}
+</script>
 <style lang="less">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

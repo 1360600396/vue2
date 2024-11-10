@@ -128,22 +128,42 @@ export default {
 </script>
 
 <style scoped>
+*{
+	padding: 0;
+	margin: 0;
+}
+#app {
+	width: 100%;
+	height: 100vh;
+}
 	.active {
 		border: 3px solid blue;
 	}
 	
 	
 	.condition-box {
-		width: 100%;
+		overflow-x: auto; /* 宽度不足时出现水平滚动条 */
+		position: fixed;
+		left: 50%;
+		transform: translate(-50%, 0);
+		overflow: hidden;
+		z-index: 999;
+		/* position: fixed; */
+		max-width: 1200px;
+		width: 70%;
+		margin:  0 auto;
 		height: 80px;
 		padding: 0 10px;
 		box-sizing: border-box;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+		margin: 0 auto;
+		background-color: blue;
 	}
 	
-	.title-box {
+	.title-box 	{
+		width: 70%;
 		display: flex;
 		border-radius: 10px;
 		
@@ -177,12 +197,18 @@ export default {
 	
 	
 	.list-box {
-		width: 100%;
+		/* margin-left: 5%; */
+		padding-top: 80px;
+	max-width: 1200px;
+	margin: 0 auto;
+		width: 70%;
 		display: flex;
 		flex-wrap: wrap;
+		height: calc(100vh - 80px);
+		overflow-y: auto; /* 使 box2 内部内容可滚动 */
 	}
 	.list-item {
-		width: 20%;
+		width: 16.66%;
 		padding: 10px;
 		box-sizing: border-box;
 	}
@@ -242,11 +268,11 @@ export default {
 	
 	/* 当屏幕小于1400px */
 	@media screen and (max-width: 1400px){
-		.list-box {
-		}
-		.list-desc {
-			
-			
+		/* .list-box {
+			width: 25%;
+		} */
+		.list-item {
+			width: 20%;
 		}
 		
 		.tips {
@@ -283,11 +309,11 @@ export default {
 		.list-box {
 		}
 		
-		.list-desc {
+		/* .list-desc {
 			display: flex;
 			flex-wrap: wrap;
 			
-		}
+		} */
 		.tips {
 			padding: 4px 8px;
 			font-size: 12px;
@@ -327,7 +353,7 @@ export default {
 		.list-item {
 			width: 50%;
 		}
-		.condition-box {
+		/* .condition-box {
 			display: flex;
 			flex-wrap: wrap;
 			margin: 40px 0;
@@ -339,7 +365,7 @@ export default {
 			width: 100%;
 			margin-top: 20px;
 			
-		}
+		} */
 	}
 	
 	
